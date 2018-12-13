@@ -1,0 +1,10 @@
+{
+    "presets": [
+        "@babel/preset-env",
+        "mobx",
+        "@babel/preset-react"
+    ],
+    "plugins": [
+        "@babel/plugin-transform-runtime"
+    ]
+}

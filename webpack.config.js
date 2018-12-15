@@ -18,6 +18,7 @@ module.exports = {
     plugins:[new htmlWebpackPlugin({//创建一个在内存中生成  html 的页面
         template:path.join(__dirname,'./src/index.html'),//指定模板页面,
         filename:'index.html',//指定生成的模板页面名称,默认放在出口目录,dist里面
+        favicon: path.resolve( './src/images/favicon.ico')//打包网页favicon.ico
     }
     ) ,// make sure to include the plugin for the magic
         new VueLoaderPlugin()],//Vue需要
@@ -38,7 +39,7 @@ module.exports = {
                 use:['style-loader','css-loader','sass-loader'],
             },
             {
-                test:/\.(jpg|png|gif|bmp|jpeg)$/,
+                test:/\.(jpg|png|gif|bmp|jpeg|ico)$/,
                 use:'url-loader?limit=20000&name=[hash:8]-[name].[ext]'//loader传参,limit值是字节,如果图片小于值,会转成base64,如果大于,就使用原图
                 // name =[name].[ext]
             },

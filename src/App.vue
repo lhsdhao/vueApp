@@ -1,11 +1,15 @@
 <template>
     <div class="app-container">
-        <mt-header fixed title="App"></mt-header>
+        <mt-header fixed title="APP-header"></mt-header>
+		<span class="go-back" @click="back">&lt;</span>
+
+		<!-- 下面4个按钮所对应的界面 -->
 		<transition mode="out-in">
 		
 		<router-view></router-view>
 		
 		</transition>
+		<!-- 下面4个按钮所对应的界面 -->
 
  				
 
@@ -36,7 +40,20 @@
 </template>
 
 <script>
-    
+	export default{
+    data(){
+		return {}
+	},
+	methods:{
+		back(){
+			this.$router.go(-1);//this.$router是一个方法,里面有push,go,back()等等法方法
+			//$routr.parmes. 才是获取路由参数
+			console.log(this);
+		}
+	}
+
+
+	}
 </script>
 
 <style lang="css" scoped>
@@ -45,6 +62,16 @@
         padding: 0;
         /* box-sizing: border-box; */
     }
+	.go-back{
+		position: fixed;
+		left: 20px;
+		top: 10px;
+		z-index: 2;
+		font-weight: 100;
+		font-size :35px;
+		
+		color:white;
+	}
     .app-container{
         padding-top: 40px;
     }

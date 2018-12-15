@@ -5,7 +5,7 @@
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack-dev-server --open --port 4000 --contentBase src --hot",
+    "dev": "webpack-dev-server --open --port 4000 --contentBase src --hot --host 192.168.1.102",
     "build": "webpack"
   },
   "keywords": [],
@@ -27,6 +27,7 @@
     "@babel/runtime": "^7.2.0",
     "babel-loader": "^8.0.4",
     "babel-plugin-component": "^1.1.1",
+    "babel-plugin-transform-remove-strict-mode": "0.0.2",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-mobx": "^2.0.0",
     "css-loader": "^2.0.0",
